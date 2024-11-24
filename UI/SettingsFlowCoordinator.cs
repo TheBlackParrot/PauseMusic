@@ -26,7 +26,7 @@ namespace PauseMusic.UI
 
 		private void Start()
 		{
-			MenuButtons.instance.RegisterButton(
+			MenuButtons.Instance.RegisterButton(
 				new MenuButton("Pause Music", onClick: () =>
 					{
 						parentFlowCoordinator.PresentFlowCoordinator(this);

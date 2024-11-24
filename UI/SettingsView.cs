@@ -50,6 +50,8 @@ namespace PauseMusic.UI
 
 		[UIValue("available-files")]
 		private List<object> Files => Directory.GetFiles(path).Select(x => (object)Path.GetFileNameWithoutExtension(x)).ToList();
+		
+		internal string path = Path.Combine(UnityGame.UserDataPath, "PauseMusic");
 
 		[UIAction("#post-parse")]
 		internal void PostParse()
@@ -59,7 +61,5 @@ namespace PauseMusic.UI
 				Directory.CreateDirectory(path);
 			}
 		}
-
-		internal string path = Path.Combine(UnityGame.UserDataPath, "PauseMusic");
 	}
 }
